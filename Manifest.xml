@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appSettings>
+    <system>
+        <installation installed="false" />
+    </system>
+    <encryption>
+        <add name="Default" key="IflVg12jgfpnegsd" />
+    </encryption>
+    <connectionStrings>
+        <add name="Default" 
+            connectionString="Driver=MySQL;Server=localhost;Database=iflvg;User=dbIflvgUser;Password=pass123" />
+    </connectionStrings>
+    <authentication>
+          <add name="Provider" provider="FormAuthentication" />
+    </authentication>
+    <applicationPool>
+        <add name="Default" path="~/assets/files/" />
+    </applicationPool>
+    <web>
+        <membership defaultProvider="DefaultMembershipProvider">
+            <providers>
+                <add name="DefaultMembershipProvider" type="SqlMembershipProvider" />
+            </providers>
+        </membership>
+        <roleManager defaultProvider="DefaultRoleProvider">
+            <providers>
+                <add name="DefaultRoleProvider" type="SqlRoleProvider" />
+            </providers>
+        </roleManager>
+        <applicationState state="Debug"></applicationState>
+        <cookiePath path="" domain="" />
+        <errorHandling>
+        	<errorPages>
+        		<add name="4xx" handler="Error400Controller" />
+        		<add name="5xx" handler="Error500Controller" />
+        	</errorPages>
+        </errorHandling>
+    </web>
+</appSettings>

@@ -1,0 +1,31 @@
+@CHARSET "ISO-8859-1";
+body {
+	padding-top: 50px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+#main-wrapper {
+	margin-top: 50px;
+}
+
+.validate-error {
+  color: #ff0000;
+  font-weight: bold;
+  clear:both;
+  display: block;
+}
+
+.required-error {
+  color: #ff0000;
+  font-weight: bold;
+  clear:both;
+}
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }

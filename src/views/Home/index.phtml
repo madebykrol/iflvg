@@ -1,0 +1,16 @@
+<?php
+use yogi\framework\helpers\Html;
+$layout = "src/views/Share/_layout.phtml";
+?>
+
+<div class="container">
+	<div ng-controller="IflvgIndexController">
+		<div ng-cloak><p>{{content.Version}}</p></div>
+	</div>
+</div>
+
+@Region Header
+<div class="container">
+	<h1><?php print "HELLO HEADER"; ?></h1>
+</div>
+@Endregion

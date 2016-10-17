@@ -1,0 +1,59 @@
+<?php
+use yogi\framework\helpers\Html;
+use src\models\viewmodels\StartPageViewModel;
+$layout = "src/views/Share/_layout.phtml";
+
+/**
+ * @var StartPageViewModel $model
+ */
+
+?>
+
+<div class="container">
+	<div ng-controller="IflvgIndexController">
+		<div ng-cloak><p>{{content.Version}}</p></div>
+	</div>
+</div>
+
+@Region Header
+<div class="container">
+	<h1><?php print "HELLO HEADER"; ?></h1>
+	
+	<div class="container">
+	  <br>
+	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	    <!-- Indicators -->
+	    <ol class="carousel-indicators">
+    		<?php for($i = 0; $i < count($model->billboard); $i++ ) {?>
+	      		<li data-target="#myCarousel" data-slide-to="<?php print $i?>" class="<?php  print ($i==0) ? 'active' : '';?>"></li>
+      		<?php }?>
+	    </ol>
+	
+	    <!-- Wrapper for slides -->
+	    <div class="carousel-inner" role="listbox">
+			<?php 
+			for($i = 0; $i < count($model->billboard); $i++) {
+				$billboardItem = $model->billboard[$i];
+				?>
+				<div class="item <?php print ($i == 0) ? 'active' : '';?>">
+			    	<img src="<?php print $billboardItem->image;?>" alt="<?php print $billboardItem->title;?>" width="400" height="300">
+		      	</div>
+				<?php 
+			}
+			?>
+	    </div>
+	
+	    <!-- Left and right controls -->
+	    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+	      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	      <span class="sr-only">Previous</span>
+	    </a>
+	    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	      <span class="sr-only">Next</span>
+	    </a>
+	  </div>
+	</div>
+	
+</div>
+@Endregion
